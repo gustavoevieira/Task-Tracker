@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canada Task Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="main-title">
+        <span class="maple-icon">🍁</span>
+        Canada Task Tracker
+        <span class="maple-icon">🍁</span>
+    </h1>
+
+    <div class="block">
+        <h2>🍁 Block 1: Recurring</h2>
+        <div class="item">
+            <div class="item-left">
+                <span class="work-label">💼 Job Tasks</span>
+            </div>
+            <div class="counter-section">
+                <span class="count-display" id="workCount">0</span>
+                <button class="counter-btn" onclick="incrementWork()">Finish +1</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="block" id="bloco2">
+        <h2>🏔️ Block 2: Main</h2>
+        <div class="item">
+            <label class="cb-container">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                <span class="label-text">📖 English</span>
+            </label>
+        </div>
+        <div class="item">
+            <label class="cb-container">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                <span class="label-text">💻 Development</span>
+            </label>
+        </div>
+        <div class="item">
+            <label class="cb-container">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                <span class="label-text">💰 Extra Income</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="block" id="bloco3">
+        <h2>🌲 Block 3: Secundary</h2>
+        <div class="item">
+            <label class="cb-container">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                <span class="label-text">📂 Portfolio</span>
+            </label>
+        </div>
+        <div class="item">
+            <label class="cb-container">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                <span class="label-text">🛂 Imigration</span>
+            </label>
+        </div>
+        <div class="item">
+            <label class="cb-container">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                <span class="label-text">⛪ Bible</span>
+            </label>
+        </div>
+        <div class="item">
+            <label class="cb-container">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                <span class="label-text">👩🏾‍🦱 Help Fe</span>
+            </label>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 30px;">
+        <button onclick="finalizarDia()" style="background-color: #C5192D; color: white; border: none; padding: 15px 30px; border-radius: 30px; font-weight: bold; cursor: pointer; font-size: 1.1rem; width: 100%;">
+            🇨🇦 Finish Maple Blueprint today
+        </button>
+    </div>
+
+    <div class="block" style="background: #fdfdfd; padding: 15px; border-radius: 10px; border: 1px solid #ddd;">
+        <h3>🔍 Check History</h3>
+        
+        <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
+            <input type="date" id="filtroData" style="padding: 5px; border-radius: 5px; border: 1px solid #ccc;">
+            <button onclick="buscarDataEspecifica()" class="counter-btn" style="padding: 5px 15px;">Serach Day</button>
+        </div>
+    
+        <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+            <input type="date" id="dataInicio" title="Início">
+            <input type="date" id="dataFim" title="Fim">
+            <button onclick="buscarPeriodo()" class="counter-btn" style="background: #2c3e50;">Filter Period</button>
+        </div>
+    
+        <div id="display-resultado" style="background: white; padding: 15px; border-radius: 8px; border-left: 5px solid var(--maple-leaf-red); min-height: 50px;">
+           Loading yesterday data...
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script> <script src="script.js"></script>
+
+</body>
+</html>

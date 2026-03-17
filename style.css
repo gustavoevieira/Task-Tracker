@@ -1,0 +1,236 @@
+       :root {
+            --canada-red: #FF0000;
+            --maple-leaf-red: #C5192D;
+            --snow-white: #FFFFFF;
+            --winter-grey: #F0F2F5;
+            --text-dark: #2C3E50;
+            --text-light: #7F8C8D;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--winter-grey);
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNDNTE5MkQiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTAgMGg0MHY0MEgwVjB6bTIwIDIwaDIwdjIwSDIWMjB6TTAgMjBoMjB2MjBIMFYyMHoyMCAwaDIwdjIwSDIwVjB6Ii8+PC9nPjwvZz48L3N2Zz4=');
+            display: flex;
+            justify-content: center;
+            padding: 30px 20px;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 550px;
+            background: var(--snow-white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-top: 8px solid var(--canada-red);
+        }
+
+        h1.main-title {
+            text-align: center;
+            color: var(--maple-leaf-red);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--winter-grey);
+            padding-bottom: 12px;
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .block {
+            margin-bottom: 35px;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s;
+        }
+
+        .item:hover {
+            background-color: #fafafa;
+        }
+
+        .item-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-grow: 1;
+        }
+
+        .cb-container {
+            display: block;
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            user-select: none;
+            color: var(--text-dark);
+        }
+
+        .cb-container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 22px;
+            width: 22px;
+            background-color: #eee;
+            border-radius: 4px;
+        }
+
+        .cb-container:hover input~.checkmark {
+            background-color: #ccc;
+        }
+
+        .cb-container input:checked~.checkmark {
+            background-color: var(--maple-leaf-red);
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .cb-container input:checked~.checkmark:after {
+            display: block;
+        }
+
+        .cb-container .checkmark:after {
+            left: 8px;
+            top: 4px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .cb-container input:checked~.label-text {
+            text-decoration: line-through;
+            color: var(--text-light);
+        }
+
+        .counter-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .work-label {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .counter-btn {
+            background-color: var(--maple-leaf-red);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 2px 5px rgba(197, 25, 45, 0.3);
+        }
+
+        .counter-btn:hover {
+            background-color: #a01424;
+        }
+
+        .counter-btn:active {
+            transform: scale(0.96);
+        }
+
+        .count-display {
+            font-weight: bold;
+            color: var(--maple-leaf-red);
+            background: #fdf0f1;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 1rem;
+            border: 1px solid #f9d5d9;
+        }
+
+        .maple-icon {
+            color: var(--maple-leaf-red);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 15px;
+                border-radius: 0;
+            }
+
+            h1.main-title {
+                font-size: 1.4rem;
+            }
+
+            h2 {
+                font-size: 1.1rem;
+            }
+
+            .item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .counter-section {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .counter-btn {
+                padding: 10px 20px;
+                flex-grow: 1;
+                text-align: center;
+            }
+
+            input[type="date"] {
+                width: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+
+            button.counter-btn {
+                width: 100%;
+                margin-top: 5px;
+            }
+
+            .cb-container {
+                padding-top: 5px;
+                padding-bottom: 5px;
+                display: block;
+                width: 100%;
+            }
+        }
